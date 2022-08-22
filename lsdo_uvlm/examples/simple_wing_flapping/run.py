@@ -8,8 +8,8 @@ from lsdo_uvlm.examples.simple_wing_constant_aoa_sls_outputs.plunging_profile_ou
 
 from ozone.api import ODEProblem
 import csdl
-import csdl_om
-import csdl_lite
+# import csdl_om
+# import csdl_lite
 import numpy as np
 from vedo import dataurl, Plotter, Mesh, Video, Points, Axes, show
 
@@ -217,7 +217,7 @@ class RunModel(csdl.Model):
 
 if __name__ == "__main__":
     # Script to create optimization problem
-    be = 'csdl_om'
+    be = 'python_csdl_backend'
     # be = 'csdl_lite'
     make_video = 1
 
@@ -231,11 +231,17 @@ if __name__ == "__main__":
     # h_stepsize = delta_t = 1/(2**0.5)
     h_stepsize = delta_t = 0.5
     # h_stepsize = delta_t = 1
-    nt = 33
+    # nt = 33
+    nt = 5
     
     if be == 'csdl_om':
+        import csdl_om
         sim = csdl_om.Simulator(RunModel(num_times=nt - 1,h_stepsize=h_stepsize), mode='rev')
+    if be == 'python_csdl_backend':
+        import python_csdl_backend
+        sim = python_csdl_backend.Simulator(RunModel(num_times=nt - 1,h_stepsize=h_stepsize), mode='rev')
     if be == 'csdl_lite':
+        import csdl_lite
         sim = csdl_lite.Simulator(RunModel(num_times=nt - 1,h_stepsize=h_stepsize), mode='rev')
     sim.run()
     # sim.check_partials(compact_print=True)

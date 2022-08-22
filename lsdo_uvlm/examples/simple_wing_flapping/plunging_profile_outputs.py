@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import openmdao.api as om
-from ozone2.api import ODEProblem, Wrap
 from lsdo_uvlm.uvlm_system.uvlm_system import UVLMSystem
 import csdl_om
 import numpy as np

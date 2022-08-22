@@ -4,6 +4,7 @@ from csdl_om import Simulator
 import csdl
 
 from lsdo_uvlm.uvlm_system.solve_circulations.rhs_group_op import RHS
+from VLM_package.VLM_system.solve_circulations.utils.einsum_kij_kj_ki import EinsumKijKjKi
 
 
 class SolveMatrix(Model):

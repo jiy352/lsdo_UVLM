@@ -4,6 +4,7 @@ from csdl_om import Simulator
 import csdl
 
 from lsdo_uvlm.uvlm_system.solve_circulations.rhs_group import RHS
+from VLM_package.VLM_system.solve_circulations.utils.einsum_kij_kj_ki import EinsumKijKjKi
 
 
 class SolveMatrix(Model):
@@ -114,9 +115,26 @@ class SolveMatrix(Model):
         gamma_w_shape = (num_nodes, n_wake_pts_chord,)+ (sum((i[2] - 1) for i in bd_vortex_shapes),)
         gamma_w = model.declare_variable('gamma_w',shape=gamma_w_shape)
 
+        product = csdl.custom(aic_bd_proj,
+                                gamma_b,
+                                op=EinsumKijKjKi(in_name_1=aic_bd_proj_name,
+                                                    in_name_2='gamma_b',
+                                                    in_shape=(num_nodes, aic_shape_row, aic_shape_col),
+                                                    out_name='product'))    
+        
+        gamma_w_reshaped = csdl.reshape(gamma_w,(num_nodes,gamma_w.shape[1]*gamma_w.shape[2]))
+        model.register_output('gamma_w_reshaped',gamma_w_reshaped)
+        product_w = csdl.custom(M,
+                                gamma_w_reshaped,
+                                op=EinsumKijKjKi(in_name_1='M_mat',
+                                                    in_name_2='gamma_w_reshaped',
+                                                    in_shape=M_shape,
+                                                    out_name='product_w'))    
+
+
         # gamma_w_reshape = model.declare_variable(gamma_w,shape=(num_nodes,gamma_w.shape[1]*gamma_w.shape[2]))
-        y = csdl.einsum(aic_bd_proj, gamma_b, subscripts='kij,kj->ki') +\
-             csdl.einsum(M, csdl.reshape(gamma_w,(num_nodes,gamma_w.shape[1]*gamma_w.shape[2])), subscripts='kij,kj->ki')+ b
+        y = product + product_w+ b
+        # y = product + csdl.einsum(M, csdl.reshape(gamma_w,(num_nodes,gamma_w.shape[1]*gamma_w.shape[2])), subscripts='kij,kj->ki')+ b
         # csdl.einsum(MTX, gamma_b, subscripts='kij,kj->ki') + b
 
         model.register_output('y', y)

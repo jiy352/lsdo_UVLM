@@ -1,7 +1,8 @@
 import enum
 import numpy as np
 
-num_nodes = 32
+# num_nodes = 32
+num_nodes = 4
 # num_nodes=3
 # num_nodes=3
 
