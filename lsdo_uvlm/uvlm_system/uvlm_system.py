@@ -1,5 +1,5 @@
 import csdl
-from csdl_om import Simulator
+# from csdl_om import Simulator
 
 import numpy as np
 from lsdo_uvlm.uvlm_system.solve_circulations.solve_group import SolveMatrix

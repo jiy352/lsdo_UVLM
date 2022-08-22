@@ -8,7 +8,7 @@
 # gamma_b and gamma_W (depending on the ordering in the last line)
 
 
-from csdl_om import Simulator
+# from csdl_om import Simulator
 from csdl import Model
 import csdl
 from matplotlib.pyplot import clabel

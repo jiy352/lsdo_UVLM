@@ -1,6 +1,6 @@
 from csdl import Model, ImplicitOperation, ScipyKrylov, NewtonSolver, NonlinearBlockGS
 import numpy as np
-from csdl_om import Simulator
+# from csdl_om import Simulator
 import csdl
 
 from lsdo_uvlm.uvlm_system.solve_circulations.rhs_group import RHS

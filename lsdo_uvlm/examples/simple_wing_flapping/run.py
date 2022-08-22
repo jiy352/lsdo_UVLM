@@ -4,20 +4,16 @@ import matplotlib.pyplot as plt
 import openmdao.api as om
 from lsdo_uvlm.examples.simple_wing_constant_aoa_sls_outputs.plunging_system_free import ODESystemModel
 from lsdo_uvlm.examples.simple_wing_constant_aoa_sls_outputs.plunging_profile_outputs import ProfileSystemModel
-# from lsdo_uvlm.examples.simple_wing_constant_aoa_sls.plunging_system_free import ODESystemModel
 
 from ozone.api import ODEProblem
 import csdl
-# import csdl_om
-# import csdl_lite
+
 import numpy as np
 from vedo import dataurl, Plotter, Mesh, Video, Points, Axes, show
 
 
-from lsdo_uvlm.uvlm_preprocessing.utils.enum_flapping import *
 from lsdo_uvlm.uvlm_preprocessing.actuation_model_temp import ActuationModel
 
-t_start = time.time()
 
 
 def generate_simple_mesh(nx, ny, nt=None, offset=0):
@@ -41,14 +37,7 @@ def generate_simple_mesh(nx, ny, nt=None, offset=0):
 
 class ODEProblemTest(ODEProblem):
     def setup(self):
-        # # Define field outputs, profile outputs, states, parameters, times
-        # # Outputs. coefficients for field outputs must be defined as an upstream variable
-        # self.add_field_output('field_output',
-        #                       state_name='wing_gamma_w',
-        #                       coefficients_name='coefficients')
 
-        # If dynamic == True, The parameter must have shape = (self.num_times, ... shape of parameter @ every timestep ...)
-        # The ODE function will use the parameter value at timestep 't': parameter@ODEfunction[shape_p] = fullparameter[t, shape_p]
         ####################################
         # ode parameter names
         ####################################        
@@ -122,13 +111,11 @@ class ODEProblemTest(ODEProblem):
             # F_name = surface_name + '_F'
             # self.add_profile_output(F_name)
         
-        # self.add_profile_output('wingdummy',shape=(3, 3))
-        # self.add_profile_output('wing_gamma_b',shape=(3, 3))
+
         self.add_times(step_vector='h')
 
         # Define ODE and Profile Output systems (Either CSDL Model or Native System)
         self.set_ode_system(ODESystemModel)
-        # self.set_profile_system(ProfileSystemModel)
 
 
 class RunModel(csdl.Model):
@@ -144,12 +131,13 @@ class RunModel(csdl.Model):
         ####################################
         # Create parameters
         ####################################
-        for data in AcStates_vlm:
-            print('{:15} = {}'.format(data.name, data.value))
-            name = data.name
-            string_name = data.value
+        for data in AcStates_val_dict:
+            string_name = data
+            val = AcStates_val_dict[data]            
+            print('{:15} = {},shape{}'.format(string_name, val, val.shape))
+
             variable = self.create_input(string_name,
-                                         val=AcStates_val_dict[string_name])
+                                         val=val)
 
         initial_mesh_names = [
             x + '_initial_mesh' for x in surface_names
@@ -208,31 +196,51 @@ class RunModel(csdl.Model):
         # Create Model containing integrator
         ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching', num_times, display='default', visualization='None')
 
-        self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict), 'subgroup', ['*'])
+        self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict), 'subgroup')
         self.add(ProfileSystemModel(**profile_params_dict),'profile_outputs')
-        # dummy = self.declare_variable('dummy')
-        # self.register_output('dummy_o',dummy+1)
-        # self.add_objective('dummy_o')
+
 
 
 if __name__ == "__main__":
     # Script to create optimization problem
     be = 'python_csdl_backend'
-    # be = 'csdl_lite'
     make_video = 1
+
+
+    num_nodes = 12
+    nt = num_nodes+1
+
+    alpha_deg =0
+    alpha = alpha_deg / 180 * np.pi
+    deg = -np.deg2rad(10)
+
+    dir = ([1, ] * 8 + [-1, ] * 8 + [1, ] * 8 + [-1, ] * 8 )[:num_nodes] 
+    # define the direction of the flapping motion (hardcoding for now)
+
+    AcStates_val_dict = {
+        'u': np.ones((num_nodes, 1))* np.cos(alpha)*2,
+        'v': np.zeros((num_nodes, 1)),
+        'w': np.ones((num_nodes, 1))* np.sin(alpha),
+        'p': np.zeros((num_nodes, 1)),
+        'q': np.array(dir)*deg,
+        'r': np.zeros((num_nodes, 1)),
+        'theta': np.ones((num_nodes, 1))*alpha,
+        'psi': np.zeros((num_nodes, 1)),
+        'x': np.zeros((num_nodes, 1)),
+        'y': np.zeros((num_nodes, 1)),
+        'z': np.zeros((num_nodes, 1)),
+        'phiw': np.zeros((num_nodes, 1)),
+        'gamma': np.zeros((num_nodes, 1)),
+        'psiw': np.zeros((num_nodes, 1)),
+    }
 
     nx = 3
     ny = 4
 
-    # surface_names = ['wing','wing_1']
-    # surface_shapes = [(nx, ny, 3),(nx, ny-1, 3)]
     surface_names=['wing']
     surface_shapes=[(nx, ny, 3)]
-    # h_stepsize = delta_t = 1/(2**0.5)
     h_stepsize = delta_t = 0.5
-    # h_stepsize = delta_t = 1
-    # nt = 33
-    nt = 5
+
     
     if be == 'csdl_om':
         import csdl_om
@@ -243,19 +251,25 @@ if __name__ == "__main__":
     if be == 'csdl_lite':
         import csdl_lite
         sim = csdl_lite.Simulator(RunModel(num_times=nt - 1,h_stepsize=h_stepsize), mode='rev')
+        
+    t_start = time.time()
     sim.run()
-    # sim.check_partials(compact_print=True)
     print('simulation time is', time.time() - t_start)
-    print('#' * 50, 'print states', '#' * 50)
-    print('wing_gamma_w_int\n', sim['wing_gamma_w_int'])
-    print('wing_wake_coords_int\n', sim['wing_wake_coords_int'])
+    exit()
 
-    print('#' * 50, 'print wings', '#' * 50)
-    print('wing', sim['wing'])
-    print('wing_gamma_w_int[-1]\n', sim['wing_gamma_w_int'][-1,:,:])
+    # print('#' * 50, 'print states', '#' * 50)
+    # # print('wing_gamma_w_int\n', sim['wing_gamma_w_int'])
+    # # print('wing_wake_coords_int\n', sim['wing_wake_coords_int'])
+
+    # print('#' * 50, 'print wings', '#' * 50)
+    # print('wing', sim['wing'])
+    # print('wing_gamma_w_int[-1]\n', sim['wing_gamma_w_int'][-1,:,:])
 
     # print('#' * 50, 'print wing_wake_total_vel', '#' * 50)
     # print('wing_wake_total_vel', sim['wing_wake_total_vel'])
+    ######################################################
+    # make video
+    ######################################################
 
     if make_video == 1:
         axs = Axes(
@@ -295,7 +309,10 @@ if __name__ == "__main__":
             vp.closeWindow()
         vp.closeWindow()
         video.close()  # merge all the recorded frames
-    
+    ######################################################
+    # end make video
+    ######################################################
+
     # sim.visualize_implementation()
     # partials = sim.check_partials(compact_print=True)
     # sim.prob.check_totals(compact_print=True)

@@ -1,5 +1,5 @@
 from ast import Subscript
-from csdl_om import Simulator
+# from csdl_om import Simulator
 from csdl import Model
 import csdl
 import numpy as np
