@@ -6,7 +6,7 @@ import numpy as np
 from numpy.core.fromnumeric import size
 
 from scipy.sparse import csc_matrix
-from VLM_package.VLM_system.solve_circulations.utils.einsum_ij_kj_ki import EinsumIjKjKi
+from lsdo_uvlm.uvlm_system.solve_circulations.utils.einsum_ij_kj_ki import EinsumIjKjKi
 
 class HorseshoeCirculations(Model):
     """

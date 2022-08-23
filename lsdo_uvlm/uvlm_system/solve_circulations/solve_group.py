@@ -4,7 +4,7 @@ import numpy as np
 import csdl
 
 from lsdo_uvlm.uvlm_system.solve_circulations.rhs_group import RHS
-from VLM_package.VLM_system.solve_circulations.utils.einsum_kij_kj_ki import EinsumKijKjKi
+from lsdo_uvlm.uvlm_system.solve_circulations.utils.einsum_kij_kj_ki import EinsumKijKjKi
 
 
 class SolveMatrix(Model):
