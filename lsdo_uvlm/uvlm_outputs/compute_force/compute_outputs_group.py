@@ -10,7 +10,7 @@ from scipy.sparse import csc_matrix
 from lsdo_uvlm.uvlm_outputs.compute_force.horseshoe_circulations import HorseshoeCirculations
 from lsdo_uvlm.uvlm_outputs.compute_force.eval_pts_velocities_mls import EvalPtsVel
 # from lsdo_uvlm.uvlm_outputs.compute_force.compute_lift_drag import LiftDrag
-from lsdo_uvlm.uvlm_outputs.compute_force.compute_thrust_drag import ThrustDrag
+from lsdo_uvlm.uvlm_outputs.compute_force.compute_net_thrust import ThrustDrag
 
 
 class Outputs(Model):

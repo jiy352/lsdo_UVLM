@@ -81,9 +81,9 @@ class Explicit(csdl.CustomExplicitOperation):
         num_nodes = self.parameters['num_nodes']
         num_bd_panel = self.parameters['num_bd_panel']
         num_wake_panel = self.parameters['num_wake_panel']
-        print('shapes-------------',inputs['M_mat'].shape,sprs.todense().shape)
+        print('shapes-------------',inputs['M_mat'].shape,sprs.toarray().shape)
         outputs['M_reshaped'] = np.einsum('ijk,kl->ijl', inputs['M_mat'],
-                                          sprs.todense())
+                                          sprs.toarray())
 
     def compute_derivatives(self, inputs, derivatives):
         sprs = self.parameters['sprs']
@@ -92,11 +92,11 @@ class Explicit(csdl.CustomExplicitOperation):
         num_wake_panel = self.parameters['num_wake_panel']
 
         derivatives['M_reshaped',
-                    'M_mat'] = np.tile(sprs.T.todense().flatten(),
+                    'M_mat'] = np.tile(sprs.T.toarray().flatten(),
                                        num_nodes * num_bd_panel)
 
         # sparse.coo_matrix(
-        #     (np.tile(sprs.T.todense().flatten(), num_nodes * num_bd_panel)))
+        #     (np.tile(sprs.T.toarray().flatten(), num_nodes * num_bd_panel)))
 
         # derivatives['M_reshaped', 'M_mat'] = np.tile(sprs.T.reshape(18, 1),
         #                                          num_nodes * num_bd_panel)
