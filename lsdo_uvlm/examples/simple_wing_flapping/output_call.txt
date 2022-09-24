@@ -1,0 +1,487 @@
+Mon Aug 22 12:09:43 2022    output.dat
+
+         3616120 function calls (3588083 primitive calls) in 120.899 seconds
+
+   Ordered by: call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+382379/382364    0.046    0.000    0.046    0.000 {built-in method builtins.len}
+   243364    0.047    0.000    0.063    0.000 {built-in method builtins.isinstance}
+   200768    0.056    0.000    0.056    0.000 {built-in method numpy.asarray}
+165238/147986    0.187    0.000    0.799    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+   116958    0.051    0.000    0.123    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:291(nnz)
+   112193    0.020    0.000    0.020    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:119(get_shape)
+   103930    0.048    0.000    0.048    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:108(getnnz)
+   103048    0.150    0.000    0.150    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:648(__init__)
+    96213    0.063    0.000    0.167    0.000 <__array_function__ internals>:177(can_cast)
+    96213    0.012    0.000    0.012    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:498(can_cast)
+    73872    0.025    0.000    0.033    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:290(<genexpr>)
+    73872    0.011    0.000    0.011    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:295(<genexpr>)
+    67966    0.017    0.000    0.017    0.000 {built-in method _operator.index}
+    62230    0.054    0.000    0.054    0.000 {built-in method numpy.array}
+    51524    0.032    0.000    0.032    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:659(min)
+    51524    0.018    0.000    0.018    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/getlimits.py:672(max)
+    51524    0.228    0.000    0.618    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:131(get_index_dtype)
+    48990    0.011    0.000    0.011    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csc.py:230(_swap)
+    45148    0.029    0.000    0.029    0.000 {built-in method numpy.empty}
+    42934    0.023    0.000    0.023    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/_lib/_util.py:142(_prune_array)
+    39628    0.005    0.000    0.005    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csr.py:231(_swap)
+    33772    0.010    0.000    0.017    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:1291(isspmatrix)
+    31401    0.004    0.000    0.004    0.000 {method 'append' of 'list' objects}
+    31105    0.014    0.000    0.014    0.000 {built-in method builtins.iter}
+    30724    0.008    0.000    0.008    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_data.py:23(_get_dtype)
+    29678    0.015    0.000    0.015    0.000 {built-in method builtins.max}
+    27200    0.005    0.000    0.005    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/einsumfunc.py:1001(_einsum_dispatcher)
+    26522    0.023    0.000    0.023    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+    24816    0.018    0.000    0.029    0.000 {built-in method builtins.any}
+    24662    0.085    0.000    0.157    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:277(check_shape)
+    23247    0.022    0.000    0.043    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:91(to_native)
+    23247    0.015    0.000    0.015    0.000 {method 'newbyteorder' of 'numpy.dtype' objects}
+    23172    0.013    0.000    0.032    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_data.py:20(__init__)
+    23172    0.019    0.000    0.019    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:105(__init__)
+    21467    0.105    0.000    0.219    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1168(prune)
+    21393    0.060    0.000    0.073    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:220(isshape)
+    21372    0.316    0.000    0.847    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:136(check_format)
+21295/18159    0.134    0.000    1.864    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:26(__init__)
+    20902    0.015    0.000    0.018    0.000 {built-in method builtins.getattr}
+    20832    0.127    0.000    0.127    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    19878    0.009    0.000    0.009    0.000 {method 'rpartition' of 'str' objects}
+    19878    0.018    0.000    0.026    0.000 <frozen importlib._bootstrap>:389(parent)
+    18085    0.720    0.000    0.720    0.000 {built-in method numpy.zeros}
+17330/11630    0.015    0.000    0.022    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:361(_first_element_bool)
+    17312    0.005    0.000    0.005    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+    17255   29.986    0.002   30.115    0.002 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/accumulation_operations.py:5(diag_mult)
+    16688    0.014    0.000    0.014    0.000 {method 'astype' of 'numpy.ndarray' objects}
+    15659    0.002    0.000    0.002    0.000 {built-in method builtins.next}
+    15267    0.009    0.000    0.046    0.000 <__array_function__ internals>:177(ndim)
+    15267    0.002    0.000    0.002    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3117(_ndim_dispatcher)
+    15267    0.014    0.000    0.026    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3121(ndim)
+    15113    0.025    0.000    0.079    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:198(isintlike)
+    13794    0.011    0.000    0.012    0.000 {built-in method builtins.hasattr}
+    13541    0.013    0.000    0.013    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+    13026    0.019    0.000    0.024    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:239(getnnz)
+    12895    0.010    0.000    0.010    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+    12874    0.005    0.000    0.007    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:250(isdense)
+    12840    0.023    0.000    0.053    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1873(isscalar)
+    12840    0.020    0.000    0.079    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:193(isscalarlike)
+    12836    0.010    0.000    0.010    0.000 {built-in method _abc._abc_instancecheck}
+    12836    0.006    0.000    0.015    0.000 /usr/lib/python3.8/abc.py:96(__instancecheck__)
+    12592    0.005    0.000    0.005    0.000 {method 'get' of 'dict' objects}
+    11636    0.008    0.000    0.042    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:51(_wrapfunc)
+    11630    0.014    0.000    0.038    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:376(_compatible_boolean_index)
+    11426    0.005    0.000    0.008    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1397(<listcomp>)
+    11426    0.026    0.000    0.038    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1347(normalize_axis_tuple)
+    10388    0.039    0.000    0.054    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:83(_csr_container)
+    10101    0.009    0.000    0.040    0.000 <__array_function__ internals>:177(copyto)
+    10101    0.002    0.000    0.002    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:1071(copyto)
+     9606    0.005    0.000    0.070    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/_methods.py:38(_amax)
+     9606    0.003    0.000    0.025    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/_methods.py:42(_amin)
+     9606    0.007    0.000    0.077    0.000 {method 'max' of 'numpy.ndarray' objects}
+     9606    0.006    0.000    0.031    0.000 {method 'min' of 'numpy.ndarray' objects}
+     8829    0.003    0.000    0.011    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/digraph.py:861(predecessors)
+     8176    0.041    0.000    0.041    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+     8103    0.004    0.000    0.004    0.000 {built-in method builtins.hash}
+     8102    0.007    0.000    0.014    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:20(upcast)
+     8100    0.005    0.000    0.005    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1143(__set_sorted)
+     8073    0.001    0.000    0.001    0.000 {method 'add' of 'set' objects}
+     7749    0.001    0.000    0.001    0.000 {built-in method numpy.asanyarray}
+     5862    0.017    0.000    0.017    0.000 {built-in method scipy.sparse._sparsetools.csc_tocsr}
+     5862    0.045    0.000    0.512    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csc.py:132(tocsr)
+     5849    0.390    0.000    0.390    0.000 {built-in method scipy.sparse._sparsetools.csr_todense}
+     5815    0.016    0.000    0.244    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:148(_validate_indices)
+     5815    0.028    0.000    0.085    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:267(_unpack_index)
+     5815    0.007    0.000    0.007    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:313(_check_ellipsis)
+     5811    0.021    0.000    0.918    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1048(toarray)
+     5811    0.006    0.000    0.017    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:1277(_process_toarray_args)
+     5780    0.005    0.000    0.046    0.000 <__array_function__ internals>:177(cumsum)
+     5780    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2493(_cumsum_dispatcher)
+     5780    0.005    0.000    0.036    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2497(cumsum)
+     5780    0.024    0.000    0.024    0.000 {method 'cumsum' of 'numpy.ndarray' objects}
+     5778    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1751(_ravel_dispatcher)
+     5778    0.005    0.000    0.010    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1755(ravel)
+     5778    0.003    0.000    0.017    0.000 <__array_function__ internals>:177(ravel)
+     5738    0.012    0.000    0.793    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:46(__getitem__)
+     5713    0.001    0.000    0.001    0.000 {method 'insert' of 'list' objects}
+     5713    0.004    0.000    0.004    0.000 {built-in method builtins.sorted}
+     5713    0.005    0.000    0.089    0.000 <__array_function__ internals>:177(moveaxis)
+     5713    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1406(_moveaxis_dispatcher)
+     5713    0.003    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1472(<listcomp>)
+     5713    0.025    0.000    0.077    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1410(moveaxis)
+     5701    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1862(_nonzero_dispatcher)
+     5701    0.003    0.000    0.013    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1866(nonzero)
+     5701    0.003    0.000    0.019    0.000 <__array_function__ internals>:177(nonzero)
+     5701    0.005    0.000    0.005    0.000 {method 'nonzero' of 'numpy.ndarray' objects}
+     5700    0.055    0.000    0.055    0.000 {method 'solve' of 'SuperLU' objects}
+     5700    0.004    0.000    0.051    0.000 <__array_function__ internals>:177(flatnonzero)
+     5700    0.007    0.000    0.027    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:289(full)
+     5700    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:627(_flatnonzero_dispatcher)
+     5700    0.008    0.000    0.043    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:631(flatnonzero)
+     5700    0.012    0.000    0.012    0.000 {built-in method scipy.sparse._sparsetools.csr_row_index}
+     5700    0.094    0.000    0.522    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:688(_major_index_fancy)
+     5700    0.004    0.000    0.004    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:782(_minor_slice)
+     5700    0.011    0.000    0.074    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:172(_asindices)
+     5700    0.008    0.000    0.534    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csc.py:219(_get_sliceXarray)
+     5440    0.004    0.000    0.150    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/einsumfunc.py:1009(einsum)
+     5440    0.005    0.000    0.174    0.000 <__array_function__ internals>:177(einsum)
+     5440    0.146    0.000    0.146    0.000 {built-in method numpy.core._multiarray_umath.c_einsum}
+     5415    0.011    0.000    0.011    0.000 {built-in method scipy.sparse._sparsetools.coo_matvec}
+     4596    0.003    0.000    0.004    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/codeblock.py:28(write)
+     4573    0.000    0.000    0.000    0.000 {method 'popleft' of 'collections.deque' objects}
+     4573    0.007    0.000    0.011    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/algorithms/traversal/breadth_first_search.py:15(generic_bfs_edges)
+     4573    0.001    0.000    0.012    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/algorithms/traversal/breadth_first_search.py:90(bfs_edges)
+     4558    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+     4502    0.002    0.000    0.002    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/digraph.py:829(successors)
+     4401    0.007    0.000    0.034    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:149(ones)
+     4374    0.015    0.000    6.516    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:507(_mul_dispatch)
+     4298    0.006    0.000    6.545    0.002 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:616(__matmul__)
+     4256    0.004    0.000    0.006    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:54(upcast_char)
+     4225    0.005    0.000    0.016    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:739(__getattr__)
+     4066    0.030    0.000    6.369    0.002 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:493(_mul_multivector)
+     4028    0.021    0.000    0.460    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csc.py:108(transpose)
+     3914    5.606    0.001    5.606    0.001 {built-in method scipy.sparse._sparsetools.csr_matvecs}
+     3914    0.020    0.000    6.898    0.002 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:598(_rmul_dispatch)
+     3914    0.008    0.000    6.942    0.002 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:622(__rmatmul__)
+     3824    0.004    0.000    0.011    0.000 <__array_function__ internals>:177(empty_like)
+     3824    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:80(empty_like)
+     3231    0.005    0.000    0.027    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:125(_set_self)
+     2821    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/general_utils.py:31(get_deriv_name)
+     2660    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/general_utils.py:41(get_path_name)
+     2570    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:464(_find_unique_id)
+     2484    0.002    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/csdl/csdl/utils/parameters.py:476(__getitem__)
+     2008    0.020    0.000    0.020    0.000 {built-in method scipy.sparse._sparsetools.csr_has_canonical_format}
+     2008    0.007    0.000    0.048    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1081(__get_has_canonical_format)
+     2008    0.003    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1103(__set_has_canonical_format)
+     2008    0.002    0.000    0.050    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1111(sum_duplicates)
+     1956    0.001    0.000    0.001    0.000 {built-in method numpy.promote_types}
+     1952    0.003    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:95(getdtype)
+     1912    0.052    0.000    0.052    0.000 {built-in method scipy.sparse._sparsetools.coo_tocsr}
+     1898    0.002    0.000    0.218    0.000 <__array_function__ internals>:177(cross)
+     1898    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1481(_cross_dispatcher)
+     1898    0.112    0.000    0.211    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numeric.py:1485(cross)
+     1875    0.016    0.000    0.209    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:126(__init__)
+     1875    0.040    0.000    0.113    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:265(_check)
+     1875    0.002    0.000    0.007    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:119(getdata)
+     1874    0.009    0.000    0.012    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:73(_coo_container)
+     1781    0.004    0.000    0.321    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:348(asformat)
+     1712    0.001    0.000    0.001    0.000 {method 'items' of 'dict' objects}
+     1618    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:70(<dictcomp>)
+     1618    0.004    0.000    0.046    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:69(_wrapreduction)
+     1606    0.007    0.000    0.007    0.000 {method 'copy' of 'numpy.ndarray' objects}
+     1530    0.006    0.000    0.008    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:78(_csc_container)
+     1414    0.018    0.000    0.278    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:330(tocsc)
+     1308    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/systemgraph.py:858(get_successor_path_string)
+   1140/1    0.004    0.000    0.006    0.006 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/codeblock.py:109(to_string)
+     1139    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/codeblock.py:101(_indent_all)
+     1011    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/reportviews.py:424(__call__)
+     1011    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/reportviews.py:545(__getitem__)
+      987    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+      825    0.001    0.000    0.043    0.000 <__array_function__ internals>:177(sum)
+      825    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2157(_sum_dispatcher)
+      825    0.002    0.000    0.041    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2162(sum)
+      793    0.001    0.000    0.009    0.000 <__array_function__ internals>:177(prod)
+      793    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2922(_prod_dispatcher)
+      793    0.001    0.000    0.008    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2927(prod)
+      764    0.003    0.000    0.385    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/custom_explicit/custom_explicit.py:172(get_partials)
+      730    0.002    0.000    0.002    0.000 {method 'argsort' of 'numpy.ndarray' objects}
+      655    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:125(_unpack_tuple)
+      655    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:133(_unique_dispatcher)
+      655    0.001    0.000    0.011    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:138(unique)
+      655    0.007    0.000    0.009    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/arraysetops.py:323(_unique1d)
+      655    0.001    0.000    0.012    0.000 <__array_function__ internals>:177(unique)
+      620    0.002    0.000    0.002    0.000 {built-in method numpy.arange}
+      608    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+      576    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:345(<genexpr>)
+      574    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/codeblock.py:57(comment)
+      574    0.000    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/codeblock.py:73(newline)
+      572    0.001    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/codeblock.py:3(__init__)
+      568    0.000    0.000    0.004    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/systemgraph.py:890(get_operation_sparsity)
+      566    0.004    0.000    0.006    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/twodim_base.py:162(eye)
+      535    0.000    0.000    0.001    0.000 {method 'view' of 'numpy.ndarray' objects}
+      508    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/operation_base.py:201(get_lang_input)
+      498    0.007    0.000    0.091    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:371(tocsr)
+      452    0.000    0.000    0.000    0.000 {method 'index' of 'list' objects}
+      423    0.001    0.000    0.003    0.000 <__array_function__ internals>:177(atleast_2d)
+      423    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/shape_base.py:77(_atleast_2d_dispatcher)
+      423    0.002    0.000    0.002    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/shape_base.py:81(atleast_2d)
+      422    0.001    0.000    0.001    0.000 {built-in method scipy.sparse._sparsetools.expandptr}
+      422    0.003    0.000    0.050    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1034(tocoo)
+      421    0.009    0.000    0.067    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:365(multiply)
+   402/22    0.004    0.000  120.995    5.500 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/custom_explicit/custom_explicit.py:146(solve)
+      384    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/operation_base.py:250(determine_sparse_default_elementwise)
+      384    0.000    0.000    0.006    0.000 <__array_function__ internals>:177(concatenate)
+      384    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:148(concatenate)
+      382    0.003    0.000    0.006    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/custom_utils.py:155(prepare_compute_derivatives)
+      382    0.005    0.000    0.356    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/custom_utils.py:177(postprocess_compute_derivatives)
+      382    0.002    0.000    0.382    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/custom_explicit/custom_explicit.py:182(compute_derivatives)
+      378    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/general_utils.py:7(to_list)
+      367    0.001    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:435(__setitem__)
+      353    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/operation_base.py:189(get_input_id)
+      304    0.001    0.000    0.106    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:387(multiply)
+      266    0.081    0.000    0.372    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/cross.py:107(compute_cross_jac)
+      266    0.013    0.000    0.269    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/cross.py:150(compute_cross_jac)
+      260    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/operation_base.py:207(get_lang_output)
+      260    0.001    0.000    0.010    0.000 /home/jyan_linux/Downloads/Software/lsdo_UVLM_new/lsdo_uvlm/lsdo_uvlm/uvlm_system/solve_circulations/utils/einsum_kij_kij_ki.py:38(compute)
+      256    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:486(check_variable_existence)
+      247    0.003    0.000    0.009    0.000 /home/jyan_linux/Downloads/Software/lsdo_UVLM_new/lsdo_uvlm/lsdo_uvlm/uvlm_system/solve_circulations/utils/einsum_kij_kij_ki.py:50(compute_derivatives)
+      231    0.001    0.000    0.001    0.000 {method 'take' of 'numpy.ndarray' objects}
+      230    0.000    0.000    0.000    0.000 {method 'indices' of 'slice' objects}
+      230    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:344(is_pydata_spmatrix)
+      214    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/general_utils.py:20(get_only)
+      192    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:346(iterable)
+      192    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:25(_maybe_view_as_subclass)
+      192    0.078    0.000    0.079    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:340(_broadcast_to)
+      166    0.045    0.000    0.053    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/power_combination.py:55(get_partials)
+      166    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/power_combination.py:108(determine_sparse)
+      156    0.001    0.000    0.001    0.000 {built-in method scipy.sparse._sparsetools.csr_matmat_maxnnz}
+      156    0.001    0.000    0.001    0.000 {built-in method scipy.sparse._sparsetools.csr_matmat}
+      156    0.001    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:883(check_bounds)
+      156    0.003    0.000    0.069    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:507(_mul_sparse_matrix)
+      156    0.001    0.000    0.098    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:595(_mul_sparse_matrix)
+      154    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1127(__get_sorted)
+      154    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csc.py:236(isspmatrix_csc)
+      154    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:1315(_diff_dispatcher)
+      154    0.002    0.000    0.002    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:1319(diff)
+      154    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(diff)
+      154    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:542(<genexpr>)
+      153    0.004    0.000    0.005    0.000 {built-in method _warnings.warn}
+      152    0.004    0.000    0.004    0.000 {built-in method scipy.sparse._sparsetools.csc_matvecs}
+      152    0.000    0.000    0.000    0.000 {method 'squeeze' of 'numpy.ndarray' objects}
+      138    0.000    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:415(__getitem__)
+      134    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/general_utils.py:68(lineup_string)
+      133    0.001    0.000    0.103    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:459(__add__)
+      133    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:693(__iadd__)
+      130    0.003    0.000    0.005    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/linear_combination.py:43(get_partials)
+      130    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/linear_combination.py:65(determine_sparse)
+    119/1    0.000    0.000  121.042  121.042 {built-in method builtins.exec}
+      119    0.000    0.000    0.012    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_data.py:91(copy)
+    118/1    0.000    0.000  121.042  121.042 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/instructions.py:34(execute)
+      118    0.000    0.000    0.011    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1224(_with_data)
+      116    0.000    0.000    0.000    0.000 {built-in method time.time}
+      114    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:288(<genexpr>)
+      114    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/matrixlib/defmatrix.py:167(__array_finalize__)
+      105    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csc.py:124(tocsc)
+       96    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:240(asfptype)
+       95    0.001    0.000    0.001    0.000 {built-in method scipy.sparse._sparsetools.csr_plus_csr}
+       95    0.001    0.000    0.021    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1238(_binopt)
+       95    0.000    0.000    0.021    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:359(_add_sparse)
+       91    0.021    0.000    0.021    0.000 {built-in method builtins.print}
+       88    0.001    0.000    0.032    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/expand.py:76(get_partials)
+       88    0.000    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/expand.py:93(determine_sparse)
+       84    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+       84    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       83    0.000    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/reshape.py:39(get_partials)
+       83    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/reshape.py:53(determine_sparse)
+       80    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/wrappers/implicit_sim_wrapper.py:87(set_input)
+       80    0.000    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/lsdo_VLM/VLM_package/VLM_system/solve_circulations/utils/einsum_kij_kj_ki.py:40(compute)
+       78    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+       78    0.001    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/lsdo_VLM/VLM_package/VLM_system/solve_circulations/utils/einsum_kij_kj_ki.py:52(compute_derivatives)
+       78    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:432(_repeat_dispatcher)
+       78    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:436(repeat)
+       78    0.000    0.000    0.001    0.000 <__array_function__ internals>:177(repeat)
+       78    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csr_sample_offsets}
+       78    0.000    0.000    0.004    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:880(_prepare_indices)
+       78    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:5385(_append_dispatcher)
+       78    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:5389(append)
+       78    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(append)
+       78    0.000    0.000    0.000    0.000 {method 'repeat' of 'numpy.ndarray' objects}
+       77    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+       77    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+       77    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1008(_argsort_dispatcher)
+       77    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/fromnumeric.py:1012(argsort)
+       77    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(argsort)
+       77    0.001    0.000    0.001    0.000 {built-in method scipy.sparse._sparsetools.csr_sort_indices}
+       77    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csr_has_sorted_indices}
+       77    0.004    0.000    0.051    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:899(_set_many)
+       77    0.008    0.000    0.037    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:958(_insert_many)
+       77    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1159(sort_indices)
+       77    0.000    0.000    0.006    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:13(_broadcast_arrays)
+       77    0.001    0.000    0.063    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_index.py:96(__setitem__)
+       77    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:416(_broadcast_shape)
+       77    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:476(_broadcast_arrays_dispatcher)
+       77    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:538(<listcomp>)
+       77    0.000    0.000    0.004    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:546(<listcomp>)
+       77    0.001    0.000    0.005    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:480(broadcast_arrays)
+       77    0.000    0.000    0.006    0.000 <__array_function__ internals>:177(broadcast_arrays)
+       76    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+       76    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csr_tocsc}
+       76    0.000    0.000    0.000    0.000 {built-in method scipy.sparse._sparsetools.csc_matvec}
+       76    0.000    0.000    0.044    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:821(_set_arrayXarray)
+       76    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:1300(_process_slice)
+       76    0.008    0.000    0.030    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:581(_mul_multivector)
+       76    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:480(_mul_vector)
+       76    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:582(__mul__)
+       76    0.001    0.000    0.009    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csr.py:172(tocsc)
+       76    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/_lib/_util.py:152(prod)
+       76    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/twodim_base.py:236(_diag_dispatcher)
+       76    0.001    0.000    0.002    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/twodim_base.py:312(diagflat)
+       76    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(diagflat)
+       76    0.000    0.000    0.000    0.000 {method '__array_wrap__' of 'numpy.ndarray' objects}
+       68    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+       66    0.000    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/systemgraph.py:841(print_loading)
+       60    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/wrappers/implicit_sim_wrapper.py:93(get_residual)
+       60    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:972(remember_implicit_states)
+     60/1    0.020    0.000  121.042  121.042 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:206(run)
+     60/1    0.003    0.000  121.042  121.042 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:251(_run)
+       58    0.000    0.000    0.595    0.010 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:288(get_totals_key)
+    58/39    0.005    0.000  120.023    3.078 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:313(_compute_totals)
+    58/39    0.012    0.000  120.629    3.093 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:341(compute_totals)
+       58    0.046    0.001    1.547    0.027 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:91(spsolve)
+       54    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/operation_base.py:238(determine_sparse)
+       40    0.000    0.000    0.004    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/wrappers/implicit_sim_wrapper.py:84(run)
+       40    0.000    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/wrappers/implicit_sim_wrapper.py:90(set_state)
+       40    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/wrappers/implicit_sim_wrapper.py:96(get_state)
+       40    0.000    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/lsdo_UVLM_new/lsdo_uvlm/lsdo_uvlm/uvlm_system/solve_circulations/utils/einsum_lijk_lik_lij.py:53(compute)
+       40    0.000    0.000    0.001    0.000 <__array_function__ internals>:177(norm)
+       40    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/linalg/linalg.py:117(isComplexType)
+       40    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/linalg/linalg.py:2353(_norm_dispatcher)
+       40    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/linalg/linalg.py:2357(norm)
+       40    0.000    0.000    0.000    0.000 {method 'dot' of 'numpy.ndarray' objects}
+       39    0.000    0.000    0.044    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/implicit_solver.py:198(build_jac)
+       39    0.000    0.000    0.114    0.003 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/wrappers/implicit_sim_wrapper.py:99(compute_totals)
+       38    0.001    0.000    0.003    0.000 Instructions_RUN_MODEL:11(<module>)
+       38    0.001    0.000    0.105    0.003 Instructions_DERIVATIVESy-->gamma_b,aic_bd_proj,M_mat,gamma_w,b:15(<module>)
+       38    0.003    0.000    1.592    0.042 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/implicit_solver.py:81(solve_res_system_rev)
+       38    0.004    0.000    1.677    0.044 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/implicit_solver.py:121(accumulate_rev)
+       38    0.001    0.000    0.405    0.011 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/sum.py:118(get_partials)
+       38    0.000    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/lsdo_UVLM_new/lsdo_uvlm/lsdo_uvlm/uvlm_system/solve_circulations/utils/einsum_lijk_lik_lij.py:65(compute_derivatives)
+       38    0.002    0.000    0.002    0.000 {built-in method scipy.sparse.linalg._dsolve._superlu.gstrf}
+       38    0.000    0.000    0.010    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:248(splu)
+       38    0.000    0.000    0.010    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py:437(factorized)
+       38    0.000    0.000    0.001    0.000 <__array_function__ internals>:177(ravel_multi_index)
+       38    0.000    0.000    0.006    0.000 <__array_function__ internals>:177(unravel_index)
+       38    0.000    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:798(_get_submatrix)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csr.py:333(isspmatrix_csr)
+       38    0.001    0.000    0.004    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:347(_add_dense)
+       38    0.000    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:662(_get_sliceXslice)
+       38    0.000    0.000    0.003    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_csr.py:135(transpose)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:125(reshape)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_base.py:233(_container)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:303(<listcomp>)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:327(check_reshape_kwargs)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_sputils.py:359(matrix)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:4995(_delete_dispatcher)
+       38    0.001    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/function_base.py:4999(delete)
+       38    0.000    0.000    0.002    0.000 <__array_function__ internals>:177(delete)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:363(_broadcast_to_dispatcher)
+       38    0.000    0.000    0.075    0.002 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/stride_tricks.py:367(broadcast_to)
+       38    0.000    0.000    0.076    0.002 <__array_function__ internals>:177(broadcast_to)
+       38    0.000    0.000    0.000    0.000 {method 'item' of 'numpy.ndarray' objects}
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:960(ravel_multi_index)
+       38    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:1021(unravel_index)
+       20    0.000    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/lsdo_UVLM_new/lsdo_uvlm/lsdo_uvlm/uvlm_system/solve_circulations/utils/einsum_lijk_lj_lik.py:53(compute)
+       20    0.001    0.000    0.114    0.006 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/newton.py:16(_solve_implicit)
+       20    0.000    0.000    0.003    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/newton.py:103(solve_res_system_fwd)
+       20    0.000    0.000    0.115    0.006 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/implicit_solver.py:47(solve)
+       20    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/implicit_solver.py:261(set_guess)
+       20    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/utils/operation_utils.py:46(nl_solver_completion_status)
+       20    0.002    0.000    0.002    0.000 {built-in method scipy.sparse.linalg._dsolve._superlu.gssv}
+       19   80.038    4.213  119.961    6.314 Instructions_DERIVATIVESwing_dgammaw_dt,wing_dwake_coords_dt-->wing_gamma_w,wing_wake_coords,u,v,w,p,q,r,theta,psi,gamma,psiw,wing:15(<module>)
+       19    0.000    0.000    0.005    0.000 /home/jyan_linux/Downloads/Software/lsdo_UVLM_new/lsdo_uvlm/lsdo_uvlm/uvlm_system/solve_circulations/utils/einsum_lijk_lj_lik.py:65(compute_derivatives)
+       19    0.006    0.000  120.989    6.368 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/integrators/TimeMarching.py:792(compute_stage_explicit)
+       19    0.000    0.000    0.002    0.000 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/integrators/TimeMarching.py:970(compute_state)
+       19    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/operation_base.py:195(get_output_id)
+       19    0.001    0.000    0.410    0.022 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/Wrap.py:28(run_model)
+       19    0.000    0.000  120.571    6.346 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/Wrap.py:40(compute_total_derivatives)
+       16    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/custom_explicit/custom_explicit.py:64(get_partials)
+       15    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+     15/3    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       15    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/graph.py:448(__len__)
+     15/3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/abc.py:100(__subclasscheck__)
+       14    0.000    0.000    0.013    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/decompose.py:46(get_partials)
+       14    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/decompose.py:71(determine_sparse)
+       14    0.000    0.000    0.009    0.001 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/indexed_passthrough.py:50(get_partials)
+       14    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/indexed_passthrough.py:71(determine_sparse)
+       14    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/cross.py:93(get_partials)
+       14    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/cross.py:189(determine_sparse)
+       14    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:582(<listcomp>)
+       13    0.000    0.000    0.007    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/algorithms/dag.py:97(<setcomp>)
+       13    0.000    0.000    0.007    0.001 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/algorithms/dag.py:69(ancestors)
+       13    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/digraph.py:1167(is_directed)
+       11    0.001    0.000    0.001    0.000 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/integrators/utils.py:5(lin_interp)
+        9    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        9    0.000    0.000    0.000    0.000 /usr/lib/python3.8/codecs.py:319(decode)
+        6    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(atleast_1d)
+        6    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/shape_base.py:19(_atleast_1d_dispatcher)
+        6    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/shape_base.py:23(atleast_1d)
+        4    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        4    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        4    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/systemgraph.py:874(get_init_path_string)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/linecache.py:15(getline)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/linecache.py:37(getlines)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/warnings.py:117(_formatwarnmsg)
+        4    0.000    0.000    0.001    0.000 /usr/lib/python3.8/warnings.py:96(_showwarnmsg)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/warnings.py:403(__init__)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/warnings.py:35(_formatwarnmsg_impl)
+        4    0.000    0.000    0.001    0.000 /usr/lib/python3.8/warnings.py:20(_showwarnmsg_impl)
+        3    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/cos.py:31(get_partials)
+        3    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/cos.py:50(determine_sparse)
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'bytes' objects}
+        2    0.000    0.000    0.000    0.000 {method 'readline' of '_io.BufferedReader' objects}
+        2    0.000    0.000    0.000    0.000 {method 'seek' of '_io.BufferedReader' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+        2    0.000    0.000    0.000    0.000 {method 'readlines' of '_io._IOBase' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method io.open}
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/implicit/implicit_operation.py:145(get_accumulation_function)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/sin.py:31(get_partials)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/operations/sin.py:49(determine_sparse)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:573(_can_coerce_all)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/_methods.py:46(_sum)
+        2    0.000    0.000    0.005    0.003 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/algorithms/dag.py:66(<setcomp>)
+        2    0.000    0.000    0.005    0.003 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/algorithms/dag.py:38(descendants)
+        2    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_dia.py:366(tocsc)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_dia.py:446(isspmatrix_dia)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_construct.py:166(<listcomp>)
+        2    0.000    0.000    0.001    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_construct.py:66(diags)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_dia.py:89(__init__)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_dia.py:180(getnnz)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(iscomplexobj)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(common_type)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/type_check.py:206(_is_type_dispatcher)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/type_check.py:303(iscomplexobj)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/type_check.py:678(_common_type_dispatcher)
+        2    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/lib/type_check.py:682(common_type)
+        2    0.000    0.000    0.000    0.000 {method 'sort' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 {method 'sum' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/linecache.py:82(updatecache)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/tokenize.py:319(read_or_stop)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/tokenize.py:325(find_cookie)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/tokenize.py:295(detect_encoding)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/tokenize.py:388(open)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/codecs.py:260(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/codecs.py:309(__init__)
+        1    0.013    0.013    0.013    0.013 {built-in method builtins.compile}
+        1    0.000    0.000  121.042  121.042 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/lsdo_VLM/VLM_package/VLM_system/solve_circulations/utils/einsum_ij_kj_ki.py:40(compute)
+        1    0.018    0.018    0.575    0.575 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/systemgraph.py:387(generate_reverse)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/integrators/TimeMarching.py:178(setup_integration)
+        1    0.000    0.000  120.992  120.992 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/integrators/TimeMarching.py:189(integrate_ODE)
+        1    0.001    0.001  120.992  120.992 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/integrators/TimeMarching.py:228(integrate_ODE_phase)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/instructions.py:8(__init__)
+        1    0.000    0.000    0.018    0.018 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/instructions.py:22(compile)
+        1    0.000    0.000  120.993  120.993 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/ODEModelTM.py:127(compute)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/Downloads/Software/ozone_lsdo_nbe/ozone/ozone/classes/Wrap.py:47(set_vars)
+        1    0.000    0.000    0.594    0.594 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:159(_generate_adjoint)
+        1    0.000    0.000    0.594    0.594 /home/jyan_linux/Downloads/Software/python_csdl_backend/python_csdl_backend/core/simulator.py:269(_generate_totals)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(lexsort)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:649(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:650(<listcomp>)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/numerictypes.py:597(find_common_type)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/reportviews.py:417(__init__)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/networkx/classes/digraph.py:1078(out_degree)
+        1    0.000    0.000    0.008    0.008 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:825(_set_arrayXarray_sparse)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_compressed.py:938(_zero_many)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:508(_with_data)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:520(sum_duplicates)
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/scipy/sparse/_coo.py:531(_sum_duplicates)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'reduceat' of 'numpy.ufunc' objects}
+        1    0.000    0.000    0.000    0.000 /home/jyan_linux/.local/lib/python3.8/site-packages/numpy/core/multiarray.py:416(lexsort)
+        1    0.000    0.000  121.042  121.042 run_profile.py:266(main)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/functools.py:947(__get__)
+
+

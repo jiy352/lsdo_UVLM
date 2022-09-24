@@ -71,7 +71,7 @@ class ActuationModel(Model):
 
             initial_mesh_name = initial_mesh_names[i]
 
-            initial_mesh = self.declare_variable('initial_mesh_name', shape=surface_shape)
+            initial_mesh = self.declare_variable(initial_mesh_name, shape=surface_shape)
 
             surface_rot_vel = self.declare_variable(surface_linear_vel_names[i], shape=surface_rot_vel_shape)
 

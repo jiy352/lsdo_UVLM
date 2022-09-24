@@ -9,7 +9,8 @@ from scipy.sparse import csc_matrix
 
 from lsdo_uvlm.uvlm_outputs.compute_force.horseshoe_circulations import HorseshoeCirculations
 from lsdo_uvlm.uvlm_outputs.compute_force.eval_pts_velocities_mls import EvalPtsVel
-from lsdo_uvlm.uvlm_outputs.compute_force.compute_lift_drag import LiftDrag
+# from lsdo_uvlm.uvlm_outputs.compute_force.compute_lift_drag import LiftDrag
+from lsdo_uvlm.uvlm_outputs.compute_force.compute_net_thrust import ThrustDrag
 
 
 class Outputs(Model):
@@ -86,7 +87,19 @@ class Outputs(Model):
         )
         self.add(submodel, name='EvalPtsVel')
 
-        submodel = LiftDrag(
+        # submodel = LiftDrag(
+        #     surface_names=surface_names,
+        #     surface_shapes=surface_shapes,
+        #     eval_pts_option=eval_pts_option,
+        #     eval_pts_shapes=eval_pts_shapes,
+        #     eval_pts_names=eval_pts_names,
+        #     sprs=sprs,
+        #     coeffs_aoa=coeffs_aoa,
+        #     coeffs_cd=coeffs_cd,
+        # )
+        # self.add(submodel, name='LiftDrag')
+
+        submodel = ThrustDrag(
             surface_names=surface_names,
             surface_shapes=surface_shapes,
             eval_pts_option=eval_pts_option,
@@ -96,8 +109,7 @@ class Outputs(Model):
             coeffs_aoa=coeffs_aoa,
             coeffs_cd=coeffs_cd,
         )
-        self.add(submodel, name='LiftDrag')
-
+        self.add(submodel, name='ThrustDrag')
 
 if __name__ == "__main__":
 
