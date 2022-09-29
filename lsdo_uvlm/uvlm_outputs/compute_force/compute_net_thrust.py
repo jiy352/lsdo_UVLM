@@ -153,8 +153,9 @@ class ThrustDrag(Model):
             c_bar = wing_inital[0,nx-1,0,0] - wing_inital[0,0,0,0]
             c_bar_exp = csdl.reshape(csdl.expand(csdl.reshape(c_bar,(1,)), (num_nodes*system_size*3,1),'i->ji'),(num_nodes,system_size,3))
             dcirculation_repeat_dt = self.create_output('dcirculation_repeat_dt',shape=(num_nodes,system_size,3))
-            dcirculation_repeat_dt[0,:,:] = (circulation_repeat[1,:,:]-circulation_repeat[0,:,:])/delta_t *0
-            dcirculation_repeat_dt[1:,:,:] = (circulation_repeat[1:num_nodes,:,:]-circulation_repeat[0:num_nodes-1,:,:])/delta_t
+            dcirculation_repeat_dt[0,:,:] = (circulation_repeat[2,:,:]-circulation_repeat[0,:,:])/(delta_t*2)
+            dcirculation_repeat_dt[1:num_nodes-1,:,:] = (circulation_repeat[2:num_nodes,:,:]-circulation_repeat[0:num_nodes-2,:,:])/(delta_t*2)
+            dcirculation_repeat_dt[num_nodes-1,:,:] = (circulation_repeat[num_nodes-1,:,:]-circulation_repeat[num_nodes-3,:,:])/(delta_t*2)
             panel_forces_dynamic = rho_expand * dcirculation_repeat_dt* c_bar_exp * csdl.cross(
                 velocities, bd_vec, axis=2)
 
