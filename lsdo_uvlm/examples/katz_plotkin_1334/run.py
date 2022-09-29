@@ -119,7 +119,7 @@ class RunModel(csdl.Model):
         for data in AcStates_val_dict:
             string_name = data
             val = AcStates_val_dict[data]            
-            print('{:15} = {},shape{}'.format(string_name, val, val.shape))
+            # print('{:15} = {},shape{}'.format(string_name, val, val.shape))
 
             variable = self.create_input(string_name,
                                          val=val)
@@ -180,6 +180,7 @@ class RunModel(csdl.Model):
 
         # Create Model containing integrator
         ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching checkpointing', num_times, display='default', visualization='None')
+        # ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching', num_times, display='default', visualization='None')
 
         self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict), 'subgroup')
         self.add(ProfileSystemModel(**profile_params_dict),'profile_outputs')
@@ -191,12 +192,13 @@ class RunModel(csdl.Model):
 if __name__ == "__main__":
     # Script to create optimization problem
     be = 'python_csdl_backend'
+    # be = 'csdl_om'
     make_video = 0
 
 
-    num_nodes = 8*16
-    # num_nodes = 16
-    # num_nodes = 32
+    # num_nodes = 9*16
+    # num_nodes = 16 *2
+    num_nodes = 16*4
     nt = num_nodes+1
 
     alpha = np.deg2rad(5)
@@ -204,9 +206,8 @@ if __name__ == "__main__":
     # define the direction of the flapping motion (hardcoding for now)
 
     # u_val = np.concatenate((np.array([0.01, 0.5,1.]),np.ones(num_nodes-3))).reshape(num_nodes,1)
-    u_val = np.concatenate((np.array([0.01,]),np.ones(num_nodes-1)*1)).reshape(num_nodes,1)
     # u_val = np.ones(num_nodes).reshape(num_nodes,1)
-
+    u_val = np.concatenate((np.array([0.001]), np.ones(num_nodes-1))).reshape(num_nodes,1)
 
     AcStates_val_dict = {
         'u': u_val,
@@ -232,7 +233,7 @@ if __name__ == "__main__":
 
 
     chord = 1
-    span = 4
+    span = 12
     
     # https://github.com/LSDOlab/nasa_uli_tc1/blob/222d877228b609076dd352945f4cfe2d158d4973/execution_scripts/c172_climb.py#L33
 
@@ -261,7 +262,7 @@ if __name__ == "__main__":
 
     surface_names=['wing']
     surface_shapes=[(nx, ny, 3)]
-    h_stepsize = delta_t = 1/16 * 2
+    h_stepsize = delta_t = 1/16 
 
     
     if be == 'csdl_om':
@@ -277,7 +278,7 @@ if __name__ == "__main__":
     t_start = time.time()
     sim.run()
     print('simulation time is', time.time() - t_start)
-    np.savetxt('cl4fall',sim['wing_C_L'])
+    np.savetxt('cl12full',sim['wing_C_L'])
     # exit()
 
     # print('#' * 50, 'print states', '#' * 50)
@@ -332,6 +333,8 @@ if __name__ == "__main__":
             vp.closeWindow()
         vp.closeWindow()
         video.close()  # merge all the recorded frames
+
+    # sim.compute_totals(of='',wrt='*')
     ######################################################
     # end make video
     ######################################################
