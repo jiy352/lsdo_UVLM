@@ -75,7 +75,7 @@ class EvalPtsVel(Model):
             for x, y in zip(surface_shapes, wake_vortex_pts_shapes)
         ]
         # output_names = [x + '_aic_force' for x in surface_names]
-        circulation_names = [x + '_bdnwake_gamma' for x in surface_names]
+        circulation_names = [x + '_bdnwake_gamma_wake' for x in surface_names]
         # print('eval pts vel bdnwake_shapes ', bdnwake_shapes)
         # print('eval pts vel eval_pts_shapes ', eval_pts_shapes)
 
@@ -91,7 +91,7 @@ class EvalPtsVel(Model):
         ]
 
         eval_induced_velocities_col_names = [
-            x + '_eval_pts_induced_vel_col' for x in surface_names
+            x + '_eval_pts_induced_vel_col_wake' for x in surface_names
         ]
 
         v_total_eval_names = [x + '_eval_total_vel' for x in surface_names]

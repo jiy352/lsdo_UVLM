@@ -99,17 +99,17 @@ class Outputs(Model):
         # )
         # self.add(submodel, name='LiftDrag')
 
-        submodel = ThrustDrag(
-            surface_names=surface_names,
-            surface_shapes=surface_shapes,
-            eval_pts_option=eval_pts_option,
-            eval_pts_shapes=eval_pts_shapes,
-            eval_pts_names=eval_pts_names,
-            sprs=sprs,
-            coeffs_aoa=coeffs_aoa,
-            coeffs_cd=coeffs_cd,
-        )
-        self.add(submodel, name='ThrustDrag')
+        # submodel = ThrustDrag(
+        #     surface_names=surface_names,
+        #     surface_shapes=surface_shapes,
+        #     eval_pts_option=eval_pts_option,
+        #     eval_pts_shapes=eval_pts_shapes,
+        #     eval_pts_names=eval_pts_names,
+        #     sprs=sprs,
+        #     coeffs_aoa=coeffs_aoa,
+        #     coeffs_cd=coeffs_cd,
+        # )
+        # self.add(submodel, name='ThrustDrag')
 
 if __name__ == "__main__":
 
