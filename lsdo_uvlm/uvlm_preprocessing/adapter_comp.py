@@ -135,8 +135,8 @@ class AdapterComp(Model):
         # h = 1000
         # atmosisa = atmosphere.ATMOSPHERE_1976(Z=h)
         # rho_val = atmosisa.rho
-        # self.create_input('rho', val=1.1 * np.ones((num_nodes, 1)))
-        self.create_input('rho', val=997 * np.ones((num_nodes, 1)))
+        self.create_input('rho', val=1.1 * np.ones((num_nodes, 1)))
+        # self.create_input('rho', val=997 * np.ones((num_odes, 1)))
 
         # self.declare_variable('rho', shape=(num_nodes, 1))
 
