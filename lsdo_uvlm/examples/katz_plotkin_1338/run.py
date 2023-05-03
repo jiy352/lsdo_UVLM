@@ -178,14 +178,14 @@ class RunModel(csdl.Model):
         self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict), 'subgroup')
         self.add(ProfileSystemModel(**profile_params_dict),'profile_outputs')
         self.add_design_variable('u',lower=1e-3, upper=10)
-        self.add_objective('res')
+        # self.add_objective('res')
 
 
 
 if __name__ == "__main__":
     # Script to create optimization problem
     be = 'python_csdl_backend'
-    make_video = 0
+    make_video = 1
 
 
     # num_nodes = 9*16
@@ -268,7 +268,7 @@ if __name__ == "__main__":
     t_start = time.time()
     sim.run()
     print('simulation time is', time.time() - t_start)
-    np.savetxt('cl20',sim['wing_C_L'])
+    # np.savetxt('cl20',sim['wing_C_L'])
     # exit()
 
     # print('#' * 50, 'print states', '#' * 50)

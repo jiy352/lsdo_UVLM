@@ -181,7 +181,7 @@ class RunModel(csdl.Model):
         self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict), 'subgroup')
         self.add(ProfileSystemModel(**profile_params_dict),'profile_outputs')
         self.add_design_variable('u',lower=1e-3, upper=10)
-        self.add_objective('res')
+        # self.add_objective('res')
 
 
 
@@ -257,7 +257,7 @@ if __name__ == "__main__":
                                         np.ones(num_pts_chord)).T
             mesh[i, :, :, 2] = 0.
         return mesh
-    mesh = generate_mesh(nx,ny)
+    mesh = generate_mesh(mesh_dict)
 
 
     # mesh_val = generate_simple_mesh(nx, ny, num_nodes)

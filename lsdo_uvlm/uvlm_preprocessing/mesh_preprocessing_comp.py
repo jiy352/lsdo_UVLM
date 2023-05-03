@@ -77,7 +77,7 @@ class MeshPreprocessingComp(Model):
             bd_vtx_coords = self.create_output(bd_vtx_coords_name,
                                                shape=(def_mesh.shape))
             # the 0th until the second last one chordwise is (0.75*left +0.25*right)
-            # print('def_mesh', def_mesh.shape)
+            print('def_mesh--------------', def_mesh.shape)
             bd_vtx_coords[:, 0:num_pts_chord -1, :, :] = def_mesh[:, 0:num_pts_chord -1, :, :] * .75 +\
                                                          def_mesh[:, 1:num_pts_chord, :, :] * 0.25
             # the last one chordwise is 1/4 chord offset from the last chordwise def_mesh panel

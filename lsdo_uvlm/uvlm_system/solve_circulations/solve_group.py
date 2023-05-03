@@ -143,7 +143,7 @@ class SolveMatrix(Model):
         solve.declare_state('gamma_b', residual='y')
         solve.nonlinear_solver = NewtonSolver(
             solve_subsystems=False,
-            maxiter=5,
+            maxiter=10,
             iprint=True,
         )
         solve.linear_solver = ScipyKrylov()

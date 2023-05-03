@@ -38,11 +38,11 @@ S
 
         for i in range(len(surface_shapes)):
             bd_vxt_coords_name = surface_names[i] + '_bd_vtx_coords'
-            wake_coords_name = surface_names[i] + '_wake_coords_int'
+            wake_coords_name = 'op_'+surface_names[i] + '_wake_coords'
             bd_n_wake_coords_name = surface_names[i] + '_bdnwake_coords'
 
             surface_gamma_b_name = surface_names[i] + '_gamma_b'
-            surface_gamma_w_name = surface_names[i] + '_gamma_w_int'
+            surface_gamma_w_name = 'op_'+surface_names[i] + '_gamma_w'
             bd_n_wake_circulation_name = surface_names[i] + '_bdnwake_gamma'
 
             surface_shape = surface_shapes[i]
@@ -55,10 +55,10 @@ S
             surface_gamma_w_shape = (num_nodes, (n_wake_pts_chord ),
                                      (ny - 1))
 
-            print('wake_shape',wake_shape)
-            print('surface_shapes',surface_shapes[i])
-            print('surface_gamma_b_shape',surface_gamma_b_shape)
-            print('surface_gamma_w_shape',surface_gamma_w_shape)
+            # print('wake_shape',wake_shape)
+            # print('surface_shapes',surface_shapes[i])
+            # print('surface_gamma_b_shape',surface_gamma_b_shape)
+            # print('surface_gamma_w_shape',surface_gamma_w_shape)
 
             # add_input name and shapes
             bd_vxt_coords = self.declare_variable(bd_vxt_coords_name,

@@ -181,7 +181,7 @@ class RunModel(csdl.Model):
         self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict), 'subgroup')
         self.add(ProfileSystemModel(**profile_params_dict),'profile_outputs')
         self.add_design_variable('u',lower=1e-3, upper=10)
-        self.add_objective('res')
+        # self.add_objective('res')
 
 
 

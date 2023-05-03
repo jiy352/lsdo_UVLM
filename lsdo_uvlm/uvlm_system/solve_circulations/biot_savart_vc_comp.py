@@ -39,7 +39,15 @@ class BiotSavartComp(Model):
 
         # whether to enable the fixed vortex core model
         self.parameters.declare('vc', default=False)
-        self.parameters.declare('eps', default=5e-4)
+        # self.parameters.declare('eps', default=5e-4)
+        # self.parameters.declare('eps', default=5e-5)
+        # self.parameters.declare('eps', default=5e-3)
+        # self.parameters.declare('eps', default=5e-6)
+        # self.parameters.declare('eps', default=7e-4)
+        # self.parameters.declare('eps', default=1e-2)
+
+        # self.parameters.declare('eps', default=1e-14)
+        self.parameters.declare('eps', default=1e-8)
 
         self.parameters.declare('circulation_names', default=None)
 
@@ -50,6 +58,7 @@ class BiotSavartComp(Model):
         vortex_coords_shapes = self.parameters['vortex_coords_shapes']
         output_names = self.parameters['output_names']
         circulation_names = self.parameters['circulation_names']
+        # print('eps', self.parameters['eps'])
 
         for i in range(len(eval_pt_names)):
 
@@ -115,6 +124,17 @@ class BiotSavartComp(Model):
                                           'DA')
             AIC = v_ab + v_bc + v_cd + v_da
             self.register_output(output_name, AIC)
+
+            # if eval_pt_name=='wing_coll_pts_coords' and vortex_coords_name=='wing_bd_vtx_coords':   
+            #     print('assemble_aic line 84 eval_pt_names', eval_pt_names)
+            #     self.print_var(eval_pts+0)
+            #     print('assemble_aic line 85 vortex_coords_names', vortex_coords_names)
+            #     self.print_var(vortex_coords+0)
+            #     print('assemble_aic line 86 eval_pt_shapes', eval_pt_shapes)
+            #     print('assemble_aic l 87 vortex_coords_shapes', vortex_coords_shapes)
+            #     print('assemble_aic l 87 output_names', output_names)
+            #     print('AIC shape', AIC.shape)
+            #     self.print_var(AIC)
 
     def _induced_vel_line(self, eval_pts, p_1, p_2, vortex_coords_shape,
                           circulation_name, eval_pt_name, vortex_coords_name,
@@ -268,7 +288,12 @@ class BiotSavartComp(Model):
 
             # print('in_1 name-----------', in_1.name, in_1.shape)
             # print('v_induced_line name-----------', v_induced_line.name,
+            
             #       v_induced_line.shape)
+
+
+
+
         else:
 
             in_3 = (r1 * r2_norm - r2 * r1_norm) / (r1_norm * r2_norm)
@@ -296,73 +321,142 @@ class BiotSavartComp(Model):
 
 
 if __name__ == "__main__":
+    import python_csdl_backend
+    num_nodes = 3
+    eval_pt_names = ['wing_coll_pts_coords']
+    vortex_coords_names = ['wing_bd_vtx_coords']
+    output_names  = ['aic_bd']
 
-    def generate_simple_mesh(nx, ny, n_wake_pts_chord=None):
-        if n_wake_pts_chord == None:
-            mesh = np.zeros((nx, ny, 3))
-            mesh[:, :, 0] = np.outer(np.arange(nx), np.ones(ny))
-            mesh[:, :, 1] = np.outer(np.arange(ny), np.ones(nx)).T
-            mesh[:, :, 2] = 0.
-        else:
-            mesh = np.zeros((n_wake_pts_chord, nx, ny, 3))
-            for i in range(n_wake_pts_chord):
-                mesh[i, :, :, 0] = np.outer(np.arange(nx), np.ones(ny))
-                mesh[i, :, :, 1] = np.outer(np.arange(ny), np.ones(nx)).T
-                mesh[i, :, :, 2] = 0.
-        return mesh
 
-    n_wake_pts_chord = 6
-    nx = 3
-    ny = 4
-    nx_1 = 3
-    ny_1 = 5
-    eval_pt_names = ['col']
-    vortex_coords_names = ['vor']
-    # eval_pt_shapes = [(nx, ny, 3)]
-    # vortex_coords_shapes = [(nx, ny, 3)]
+    vor_val = np.array([[[[ 1.33974596e-03,  3.73468505e-05, -2.78512306e-03],
+         [ 1.33974596e-03,  3.73468505e-05,  0.00000000e+00],
+         [ 1.33974596e-03,  3.73468505e-05,  2.78512306e-03]],
 
-    eval_pt_shapes = [(2, 3, 3), (2, 3, 3)]
-    vortex_coords_shapes = [(nx, ny, 3)]
+        [[ 9.01923789e-03,  3.06686861e-04, -1.36997104e-02],
+         [ 9.01923789e-03,  3.06686861e-04,  0.00000000e+00],
+         [ 9.01923789e-03,  3.06686861e-04,  1.36997104e-02]],
 
-    output_names = ['aic']
+        [[ 2.52500000e-01, -8.60463458e-03, -2.97599955e-02],
+         [ 2.52500000e-01, -8.60463458e-03,  0.00000000e+00],
+         [ 2.52500000e-01, -8.60463458e-03,  2.97599955e-02]],
 
-    model_1 = Model()
+        [[ 9.62500000e-01, -2.75657205e-02, -5.26801066e-02],
+         [ 9.62500000e-01, -2.75657205e-02,  0.00000000e+00],
+         [ 9.62500000e-01, -2.75657205e-02,  5.26801066e-02]],
 
-    # circulations_val = np.zeros(
-    #     (nx - 1, ny - 1))  ####################the size of this is important
-    # circulations_val[:2, :] = np.random.random((2, ny - 1))
-    circulations_val = np.ones((nx - 1, ny - 1)) * 0.5
+        [[ 1.01250000e+00,  9.18857351e-03, -4.37689858e-02],
+         [ 1.01250000e+00,  9.18857351e-03,  0.00000000e+00],
+         [ 1.01250000e+00,  9.18857351e-03,  4.37689858e-02]]],
 
-    vor_val = generate_simple_mesh(nx, ny)
-    col_val = 0.25 * (vor_val[:-1, :-1, :] + vor_val[:-1, 1:, :] +
-                      vor_val[1:, :-1, :] + vor_val[1:, 1:, :])
-    # col_val = generate_simple_mesh(nx, ny)
 
-    vor = model_1.create_input('vor', val=vor_val)
-    col = model_1.create_input('col', val=col_val)
+       [[[ 1.33974596e-03, -3.73468505e-05, -2.78512306e-03],
+         [ 1.33974596e-03, -3.73468505e-05,  0.00000000e+00],
+         [ 1.33974596e-03, -3.73468505e-05,  2.78512306e-03]],
+
+        [[ 9.01923789e-03, -3.06686861e-04, -1.36997104e-02],
+         [ 9.01923789e-03, -3.06686861e-04,  0.00000000e+00],
+         [ 9.01923789e-03, -3.06686861e-04,  1.36997104e-02]],
+
+        [[ 2.52500000e-01,  8.60463458e-03, -2.97599955e-02],
+         [ 2.52500000e-01,  8.60463458e-03,  0.00000000e+00],
+         [ 2.52500000e-01,  8.60463458e-03,  2.97599955e-02]],
+
+        [[ 9.62500000e-01,  2.75657205e-02, -5.26801066e-02],
+         [ 9.62500000e-01,  2.75657205e-02,  0.00000000e+00],
+         [ 9.62500000e-01,  2.75657205e-02,  5.26801066e-02]],
+
+        [[ 1.01250000e+00, -9.18857351e-03, -4.37689858e-02],
+         [ 1.01250000e+00, -9.18857351e-03,  0.00000000e+00],
+         [ 1.01250000e+00, -9.18857351e-03,  4.37689858e-02]]],
+
+
+       [[[ 1.33974596e-03,  3.73468505e-05, -2.78512306e-03],
+         [ 1.33974596e-03,  3.73468505e-05,  0.00000000e+00],
+         [ 1.33974596e-03,  3.73468505e-05,  2.78512306e-03]],
+
+        [[ 9.01923789e-03,  3.06686861e-04, -1.36997104e-02],
+         [ 9.01923789e-03,  3.06686861e-04,  0.00000000e+00],
+         [ 9.01923789e-03,  3.06686861e-04,  1.36997104e-02]],
+
+        [[ 2.52500000e-01, -8.60463458e-03, -2.97599955e-02],
+         [ 2.52500000e-01, -8.60463458e-03,  0.00000000e+00],
+         [ 2.52500000e-01, -8.60463458e-03,  2.97599955e-02]],
+
+        [[ 9.62500000e-01, -2.75657205e-02, -5.26801066e-02],
+         [ 9.62500000e-01, -2.75657205e-02,  0.00000000e+00],
+         [ 9.62500000e-01, -2.75657205e-02,  5.26801066e-02]],
+
+        [[ 1.01250000e+00,  9.18857351e-03, -4.37689858e-02],
+         [ 1.01250000e+00,  9.18857351e-03,  0.00000000e+00],
+         [ 1.01250000e+00,  9.18857351e-03,  4.37689858e-02]]]])
+
+    col_val = np.array([[[[ 5.17949192e-03,  1.72016856e-04, -4.12120837e-03],
+            [ 5.17949192e-03,  1.72016856e-04,  4.12120837e-03]],
+
+            [[ 1.30759619e-01, -4.14897386e-03, -1.08649265e-02],
+            [ 1.30759619e-01, -4.14897386e-03,  1.08649265e-02]],
+
+            [[ 6.07500000e-01, -1.80851775e-02, -2.06100255e-02],
+            [ 6.07500000e-01, -1.80851775e-02,  2.06100255e-02]],
+
+            [[ 9.87500000e-01, -9.18857351e-03, -2.41122731e-02],
+            [ 9.87500000e-01, -9.18857351e-03,  2.41122731e-02]]],
+
+
+        [[[ 5.17949192e-03, -1.72016856e-04, -4.12120837e-03],
+            [ 5.17949192e-03, -1.72016856e-04,  4.12120837e-03]],
+
+            [[ 1.30759619e-01,  4.14897386e-03, -1.08649265e-02],
+            [ 1.30759619e-01,  4.14897386e-03,  1.08649265e-02]],
+
+            [[ 6.07500000e-01,  1.80851775e-02, -2.06100255e-02],
+            [ 6.07500000e-01,  1.80851775e-02,  2.06100255e-02]],
+
+            [[ 9.87500000e-01,  9.18857351e-03, -2.41122731e-02],
+            [ 9.87500000e-01,  9.18857351e-03,  2.41122731e-02]]],
+
+
+        [[[ 5.17949192e-03,  1.72016856e-04, -4.12120837e-03],
+            [ 5.17949192e-03,  1.72016856e-04,  4.12120837e-03]],
+
+            [[ 1.30759619e-01, -4.14897386e-03, -1.08649265e-02],
+            [ 1.30759619e-01, -4.14897386e-03,  1.08649265e-02]],
+
+            [[ 6.07500000e-01, -1.80851775e-02, -2.06100255e-02],
+            [ 6.07500000e-01, -1.80851775e-02,  2.06100255e-02]],
+
+            [[ 9.87500000e-01, -9.18857351e-03, -2.41122731e-02],
+            [ 9.87500000e-01, -9.18857351e-03,  2.41122731e-02]]]])
+
+    nx  = vor_val.shape[1]
+    ny  = vor_val.shape[2]
+
+    model_1 = csdl.Model()
+
+    vor = model_1.create_input('wing_bd_vtx_coords', val=vor_val)
+    col = model_1.create_input('wing_coll_pts_coords', val=col_val)
     circulations = model_1.create_input('circulations',
-                                        val=circulations_val.reshape(
-                                            1, nx - 1, ny - 1))
+                                        val=np.ones((
+                                            num_nodes, nx - 1, ny - 1)))
 
     model_1.add(BiotSavartComp(eval_pt_names=eval_pt_names,
                                vortex_coords_names=vortex_coords_names,
-                               eval_pt_shapes=eval_pt_shapes,
-                               vortex_coords_shapes=vortex_coords_shapes,
+                               eval_pt_shapes=[col.shape],
+                               vortex_coords_shapes=[vor.shape],
                                output_names=output_names,
-                               vc=True,
-                               n_wake_pts_chord=n_wake_pts_chord,
+                               vc=False,
                                circulation_names=['circulations']),
                 name='BiotSvart_group')
-    sim = Simulator(model_1)
+    sim = python_csdl_backend.Simulator(model_1)
 
-    print(sim['vor'])
+    print(sim['wing_bd_vtx_coords'])
     print(sim[output_names[0]])
     # sim.visualize_implementation()
     sim.run()
 
-    a_l = 1.25643
-    kinematic_viscocity = 1.48 * 1e-5
-    a_1 = 0.1
-    time_current = 2
-    sigma = 1 + a_1 * csdl.reshape(
-        circulations, new_shape=(circulations.shape[1:])) / kinematic_viscocity
+    # a_l = 1.25643
+    # kinematic_viscocity = 1.48 * 1e-5
+    # a_1 = 0.1
+    # time_current = 2
+    # sigma = 1 + a_1 * csdl.reshape(
+    #     circulations, new_shape=(circulations.shape[1:])) / kinematic_viscocity

@@ -4,7 +4,6 @@ from turtle import shape
 import matplotlib.pyplot as plt
 import openmdao.api as om
 from lsdo_uvlm.examples.profile_outputs.plunging_system_free import ODESystemModel
-from lsdo_uvlm.examples.profile_outputs.plunging_profile_outputs import ProfileSystemModel
 from lsdo_uvlm.examples.profile_outputs.profile_op_model import ProfileOpModel
 from lsdo_uvlm.uvlm_outputs.compute_force.compute_net_thrust import ThrustDrag
 
@@ -15,7 +14,6 @@ import numpy as np
 from vedo import dataurl, Plotter, Mesh, Video, Points, Axes, show
 
 
-from lsdo_uvlm.uvlm_preprocessing.actuation_model_temp import ActuationModel
 from VLM_package.examples.run_vlm.utils.generate_mesh import generate_mesh
 
 
@@ -195,8 +193,8 @@ class RunModel(csdl.Model):
         # self.add(ActuationModel(surface_names=surface_names, surface_shapes=surface_shapes, num_nodes=nt-1),'actuation_temp')
 
         # Create Model containing integrator
-        # ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching checkpointing', num_times, display='default', visualization='None')
-        ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching', num_times, display='default', visualization='None')
+        ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching checkpointing', num_times, display='default', visualization='None')
+        # ODEProblem = ODEProblemTest('ForwardEuler', 'time-marching', num_times, display='default', visualization='None')
 
         self.add(ODEProblem.create_solver_model(ODE_parameters=params_dict,
                                                 profile_parameters=profile_params_dict), 'subgroup')
@@ -238,7 +236,7 @@ if __name__ == "__main__":
     span = 12
     # num_nodes = 9*16
     # num_nodes = 16 *2
-    num_nodes = 200
+    num_nodes = 20
     # num_nodes = 3
     nt = num_nodes+1
 

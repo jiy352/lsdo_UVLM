@@ -102,32 +102,32 @@ class EvalPtsVel(Model):
 
         #!TODO!: rewrite this comp for mls
         # !fixed!: defining the eval_pts
-        for i in range(len(eval_pts_names)):
-            mesh = self.declare_variable(surface_names[i],
-                                         shape=surface_shapes[i])
+        # for i in range(len(eval_pts_names)):
+        #     mesh = self.declare_variable(surface_names[i],
+        #                                  shape=surface_shapes[i])
 
-            nx = surface_shapes[i][1]
-            ny = surface_shapes[i][2]
-            if self.parameters['eval_pts_option'] == 'auto':
-                print('mesh shape',mesh.shape)
-                eval_pts_coords = (
-                    (1 - eval_pts_location) * 0.5 * mesh[:, 0:-1, 0:-1, :] +
-                    (1 - eval_pts_location) * 0.5 * mesh[:, 0:-1, 1:, :] +
-                    eval_pts_location * 0.5 * mesh[:, 1:, 0:-1, :] +
-                    eval_pts_location * 0.5 * mesh[:, 1:, 1:, :])
+        #     nx = surface_shapes[i][1]
+        #     ny = surface_shapes[i][2]
+        #     if self.parameters['eval_pts_option'] == 'auto':
+        #         print('mesh shape',mesh.shape)
+        #         eval_pts_coords = (
+        #             (1 - eval_pts_location) * 0.5 * mesh[:, 0:-1, 0:-1, :] +
+        #             (1 - eval_pts_location) * 0.5 * mesh[:, 0:-1, 1:, :] +
+        #             eval_pts_location * 0.5 * mesh[:, 1:, 0:-1, :] +
+        #             eval_pts_location * 0.5 * mesh[:, 1:, 1:, :])
 
-                self.register_output(eval_pts_names[i], eval_pts_coords)
+        #         self.register_output(eval_pts_names[i], eval_pts_coords)
 
-            elif self.parameters['eval_pts_option'] == 'user_defined':
-                eval_pts_coords = self.declare_variable(
-                    eval_pts_names[i], shape=(eval_pts_shapes[i]))
+        #     elif self.parameters['eval_pts_option'] == 'user_defined':
+        #         eval_pts_coords = self.declare_variable(
+        #             eval_pts_names[i], shape=(eval_pts_shapes[i]))
 
-        # self.add(BdnWakeCombine(
-        #     surface_names=surface_names,
-        #     surface_shapes=surface_shapes,
-        #     n_wake_pts_chord=n_wake_pts_chord,
-        # ),
-        #          name='BdnWakeCombine')
+        self.add(BdnWakeCombine(
+            surface_names=surface_names,
+            surface_shapes=surface_shapes,
+            n_wake_pts_chord=n_wake_pts_chord,
+        ),
+                 name='BdnWakeCombine')
 
         for i in range(len(surface_shapes)):
             nx = surface_shapes[i][1]

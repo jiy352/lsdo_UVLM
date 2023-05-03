@@ -107,7 +107,8 @@ class ComputeWakeTotalVel(Model):
             # print('vars-------------')
             # self.print_var(wake_kinematic_vel)
             # self.print_var(wake_induced_vel)
-            wake_total_vel = wake_kinematic_vel + wake_induced_vel
+            ''''TODO: fix this hardcoding'''
+            wake_total_vel = wake_kinematic_vel + wake_induced_vel*0
             # wake_kinematic_vel * 0
             # wake_kinematic_vel+0#+wake_induced_vel
             
