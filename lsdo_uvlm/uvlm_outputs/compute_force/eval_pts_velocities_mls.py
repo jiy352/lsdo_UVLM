@@ -211,6 +211,8 @@ class EvalPtsVel(Model):
 
             v_induced_wake = model_wake_total_vel.declare_variable(
                 v_induced_wake_name, shape=eval_vel_shape)
+            
+            v_kinematic = model_wake_total_vel.declare_variable(surface_names[i]+'_kinematic_vel', shape=eval_vel_shape)
 
             # !!TODO!! this needs to be fixed for more general cases to compute the undisturbed vel
             # Note - April 7 2022: the wake velocity seems to just
@@ -225,7 +227,11 @@ class EvalPtsVel(Model):
                                            eval_vel_shape,
                                            indices='li->lji')
 
-            v_total_wake = csdl.reshape((v_induced_wake - frame_vel_expand),
+            # v_total_wake = csdl.reshape((v_induced_wake - frame_vel_expand),
+            #                             new_shape=eval_vel_shape)
+
+
+            v_total_wake = csdl.reshape((v_induced_wake + v_kinematic),
                                         new_shape=eval_vel_shape)
 
             model_wake_total_vel.register_output(v_total_eval_names[i],

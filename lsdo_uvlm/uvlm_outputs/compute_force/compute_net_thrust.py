@@ -308,6 +308,17 @@ class ThrustDrag(Model):
             self.register_output('crosspd',csdl.cross(
                 velocities, bd_vec, axis=2))
 
+            panel_forces_all = panel_forces + panel_forces_dynamic
+            self.register_output('panel_forces_all', panel_forces_all)
+            self.register_output('panel_forces_dynamic', panel_forces_dynamic)
+            panel_forces_all_mag = csdl.sum(panel_forces_all**2,axes=(2,))**0.5
+            velocities_mag = csdl.sum(velocities**2,axes=(2,))**0.5
+            panel_power = csdl.sum(panel_forces_all_mag*velocities_mag,axes=(1,))
+
+            # panel_power = csdl.sum(csdl.dot(panel_forces_all,velocities,axis=2),axes=(1,))
+            # panel_power = csdl.dot(panel_forces_all,velocities,axis=2)
+            self.register_output('panel_power',panel_power)
+
             F = self.create_output('F', shape=(num_nodes, 3))
             F[:, 0] = total_forces_temp[:, 0] + total_forces_temp_dynamic[:, 0]
             F[:, 1] = total_forces_temp[:, 1] + total_forces_temp_dynamic[:, 1]
@@ -317,7 +328,7 @@ class ThrustDrag(Model):
             F_s[:, 0] = total_forces_temp[:, 0] 
             F_s[:, 1] = total_forces_temp[:, 1] 
             F_s[:, 2] = -total_forces_temp[:, 2] 
-            self.register_output('thrust',F[:,0])
+            self.register_output('thrust',-F[:,0]) # thurst is negative x force
 
             CD_0 = 0.1936
             CD_1 = 0.1412
